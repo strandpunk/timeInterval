@@ -104,7 +104,7 @@ busy.forEach((time) => {
 const intervals = [];
 for (let i = 0; i < busyMin.length; i += 2) {
   const start = busyMin[i] - 29; // Увеличиваем начальную границу
-  const end = busyMin[i + 1] +29; // Увеличиваем конечную границу
+  const end = busyMin[i + 1] + 29; // Увеличиваем конечную границу
   intervals.push([start, end]);
 }
 
@@ -131,4 +131,8 @@ function convertMinutesArrayToTimeArray(minutesArray) {
 }
 
 const timeArray = convertMinutesArrayToTimeArray(numbersNotInIntervals);
-console.log(timeArray); 
+console.log(timeArray);
+
+const arrayOut = document.getElementById("arrayOut");
+const arrayHTML = "<ul>" + timeArray.map(item => `<li>${item}</li>`).join("") + "</ul>";
+arrayOut.innerHTML = arrayHTML;
